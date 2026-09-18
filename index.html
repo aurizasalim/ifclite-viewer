@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFC Viewer</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <input type="file" id="file-input" accept=".ifc">
+      <div id="toolbar" aria-label="Camera views"></div>
+      <span id="status">Ready</span>
+    </header>
+    <main>
+      <canvas id="viewer"></canvas>
+      <aside id="properties"></aside>
+    </main>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
