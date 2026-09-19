@@ -2,6 +2,7 @@
 import { IfcParser, type IfcDataStore, extractPropertiesOnDemand } from '@ifc-lite/parser';
 import { GeometryProcessor } from '@ifc-lite/geometry';
 import { Renderer } from '@ifc-lite/renderer';
+import { setupCameraControls } from './controls';
 
 export class IfcViewer {
   private canvas: HTMLCanvasElement;
@@ -23,6 +24,7 @@ export class IfcViewer {
     await this.renderer.init();
     await this.geometry.init();
     this.setupControls();
+    setupCameraControls(this.canvas, this.renderer);
   }
 
   async loadFile(file: File): Promise<{ entityCount: number }> {
